@@ -4,9 +4,6 @@
 			"type": "stdio",
 			"command": "python",
 			"args": [
-				"-m",
-				"mcp",
-				"run",
 				"server/weather.py"
 			]
 		}
