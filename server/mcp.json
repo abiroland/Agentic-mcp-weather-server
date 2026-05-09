@@ -3,7 +3,7 @@
     "weather": {
       "command": "python3",
       "args": [
-        "/mount/src/agentic-mcp-weather-server/mcpserver/server.py"
+        "/mount/src/agentic-mcp-weather-server/server/weather.py"
       ]
     }
   },

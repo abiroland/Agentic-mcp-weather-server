@@ -23,8 +23,7 @@ async def make_nws_request(url: str) -> dict[str, Any] | None:
             response = await client.get(url, headers=headers, timeout=30.0)
             response.raise_for_status()
             return response.json()
-        except httpx.HTTPError as e:
-            print(f"HTTP error occurred: {e}")
+        except httpx.HTTPError:
             return None
 
 
@@ -93,12 +92,6 @@ async def get_latest_news_alerts() -> str:
     formatted_articles = [f"Title: {article['title']}\nDescription: {article['description']}\nURL: {article['url']}" for article in articles]
     return "\n\n".join(formatted_articles)
 
-
-# Resource endpoint for application settings
-@mcp.resource("echo://{message}")
-def echo_resource(message: str) -> str:
-    """Echo the provided message."""
-    return f"Resource echo: {message}"
 
 
 def main():
