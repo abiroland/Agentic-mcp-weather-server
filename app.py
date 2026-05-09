@@ -244,15 +244,7 @@ st.markdown(
 )
 
 # ── Constants ──────────────────────────────────────────────────────────────────
-MCP_CONFIG = {
-    "mcpServers": {
-        "weather": {
-            "type": "stdio",
-            "command": "python",
-            "args": [str(Path(__file__).parent / "server" / "weather.py")],
-        }
-    }
-}
+MCP_CONFIG = str(Path(__file__).parent / "server" / "mcp.json")
 
 US_STATES: dict[str, str] = {
     "Alabama": "AL", "Alaska": "AK", "Arizona": "AZ", "Arkansas": "AR",
@@ -298,7 +290,7 @@ def init_agent() -> bool:
         if not api_key:
             st.error("ANTHROPIC_API_KEY not set. Add it to .env (local) or Streamlit Cloud Secrets.")
             return False
-        client = MCPClient.from_dict(MCP_CONFIG)
+        client = MCPClient.from_config_file(MCP_CONFIG)
         llm = ChatAnthropic(
             model="claude-sonnet-4-6",
             temperature=0.7,
