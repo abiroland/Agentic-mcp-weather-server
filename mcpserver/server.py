@@ -89,12 +89,4 @@ def main():
 
 
 if __name__ == "__main__":
-    transport = "sse"
-    if transport == "stdio":
-        print(f"Starting MCP server with {transport} transport...")
-        mcp.run(transport=transport)
-    elif transport == "sse":
-        print(f"Starting MCP server with {transport} transport...")
-        mcp.run(transport=transport)
-    else:
-        raise ValueError(f"Unsupported transport: {transport}")
+    mcp.run(transport="stdio")
