@@ -286,9 +286,9 @@ for k, v in defaults.items():
 # ── Agent helpers ──────────────────────────────────────────────────────────────
 def init_agent() -> bool:
     try:
-        api_key = os.getenv("ANTHROPIC_API_KEY")
+        api_key = os.getenv("ANTHROPIC_API_KEY") or st.secrets.get("ANTHROPIC_API_KEY")
         if not api_key:
-            st.error("ANTHROPIC_API_KEY not set in .env")
+            st.error("ANTHROPIC_API_KEY not set. Add it to .env (local) or Streamlit Cloud Secrets.")
             return False
         client = MCPClient.from_config_file(MCP_CONFIG)
         llm = ChatAnthropic(
