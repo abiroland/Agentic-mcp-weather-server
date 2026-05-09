@@ -9,3 +9,6 @@ wheels/
 # Virtual environments
 .venv
 .env
+
+# Streamlit secrets — never commit
+.streamlit/secrets.toml
