@@ -2,14 +2,12 @@
 	"mcpServers": {
 		"weather": {
 			"type": "stdio",
-			"command": "C:\\Users\\abiro\\.local\\bin\\uv.EXE",
+			"command": "python",
 			"args": [
-				"run",
-				"--with",
-				"mcp[cli]",
+				"-m",
 				"mcp",
 				"run",
-				"C:\\Users\\abiro\\OneDrive\\Documents\\MSDS\\mcp-weather-server\\server\\weather.py"
+				"server/weather.py"
 			]
 		}
 	},
