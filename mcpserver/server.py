@@ -3,10 +3,7 @@ import httpx
 from mcp.server.fastmcp import FastMCP
 
 # initialize Fast
-mcp = FastMCP(name="weather",
-                host="0.0.0.0", #only used for SSE transport
-                port=8000 #only used for SSE transport
-        )
+mcp = FastMCP(name="weather")
 
 # constants 
 NWS_API_AGENT = "https://api.weather.gov"
