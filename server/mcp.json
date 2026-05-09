@@ -1,0 +1,17 @@
+{
+	"mcpServers": {
+		"weather": {
+			"type": "stdio",
+			"command": "C:\\Users\\abiro\\.local\\bin\\uv.EXE",
+			"args": [
+				"run",
+				"--with",
+				"mcp[cli]",
+				"mcp",
+				"run",
+				"C:\\Users\\abiro\\OneDrive\\Documents\\MSDS\\mcp-weather-server\\server\\weather.py"
+			]
+		}
+	},
+	"inputs": []
+}
