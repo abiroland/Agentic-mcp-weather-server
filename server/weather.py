@@ -1,10 +1,7 @@
 from typing import Any
 import os
 import httpx
-from dotenv import load_dotenv
 from mcp.server.fastmcp import FastMCP
-
-load_dotenv()
 
 # initialize Fast
 mcp = FastMCP("weather")
@@ -105,8 +102,7 @@ def echo_resource(message: str) -> str:
 
 
 def main():
-    # initialize the server
-    mcp.run()
+    mcp.run(transport="stdio")
 
 
 if __name__ == "__main__":
