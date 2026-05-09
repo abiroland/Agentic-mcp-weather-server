@@ -1,12 +1,12 @@
 {
-	"mcpServers": {
-		"weather": {
-			"type": "stdio",
-			"command": "python",
-			"args": [
-				"server/weather.py"
-			]
-		}
-	},
-	"inputs": []
+  "mcpServers": {
+    "weather": {
+      "type": "stdio",
+      "command": "python3",
+      "args": [
+        "/mount/src/agentic-mcp-weather-server/server/weather.py"
+      ]
+    }
+  },
+  "inputs": []
 }
